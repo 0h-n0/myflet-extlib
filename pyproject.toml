@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "myflet-extlib"
+version = "0.1.0"
+description = ""
+authors = ["0h-n0 <kbu94982@gmail.com>"]
+readme = "README.md"
+packages = [{include = "myflet_extlib"}]
+
+[tool.poetry.dependencies]
+python = "^3.10,<3.11"
+plotly = "^5.13.0"
+flet = "^0.4.0"
+pyinstaller = "5.5.0"
+pandas = "^1.5.3"
+kaleido = "0.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
