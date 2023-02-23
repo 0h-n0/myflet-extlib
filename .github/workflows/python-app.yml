@@ -19,7 +19,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - run: pip install -U setuptools pip poetry
+    - run: pip install setuptools poetry
     - run: poetry install
     - run: poetry add pyinstaller flet
     - run: poetry run flet pack myflet_extlib/main.py    
