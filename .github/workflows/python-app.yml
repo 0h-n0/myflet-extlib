@@ -23,8 +23,7 @@ jobs:
     - run: poetry install
     - run: poetry add pyinstaller flet
     - run: poetry run flet pack myflet_extlib/main.py    
-
     - uses: actions/upload-artifact@v2
       with:
-        name: myflet
+        name: myflet_extlib
         path: dist/main.exe
