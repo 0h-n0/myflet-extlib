@@ -22,7 +22,7 @@ jobs:
     - run: pip install pyinstaller
     - run: pip install -r requirements.txt
     - run: pip install flet
-    - run: flet pack myflet-extlib/main.py    
+    - run: flet pack myflet_extlib/main.py    
 
     - uses: actions/upload-artifact@v2
       with:
