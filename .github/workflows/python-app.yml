@@ -5,7 +5,7 @@ name: Python application
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "feat/windows-action" ]
   pull_request:
     branches: [ "master" ]
 
@@ -19,10 +19,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Package Application
-      uses: 0h-n0/flet-action-windows@master
-      with:
-        path: myflet_extlib/main.py
+    - run: pip install pyinstaller
+    - run: pip install -r requirements.txt
+    - run: pip install flet
+    - run: flet pack myflet-extlib/main.py    
+
     - uses: actions/upload-artifact@v2
       with:
         name: myflet
