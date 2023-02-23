@@ -19,7 +19,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - run: pip instal -U setuptools pip
+    - run: pip install -U setuptools pip
     - run: pip install pyinstaller
     - run: pip install -r requirements.txt
     - run: pip install flet
