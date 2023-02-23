@@ -10,7 +10,7 @@ packages = [{include = "myflet_extlib"}]
 python = "^3.10,<3.11"
 plotly = "^5.13.0"
 flet = "^0.4.0"
-pyinstaller = "5.5.0"
+pyinstaller = "5.8.0"
 pandas = "^1.5.3"
 kaleido = "0.2.1"
 

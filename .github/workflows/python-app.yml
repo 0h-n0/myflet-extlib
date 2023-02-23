@@ -5,7 +5,7 @@ name: Python application
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "feat/windows-action" ]
   pull_request:
     branches: [ "master" ]
 
@@ -15,15 +15,20 @@ permissions:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-2022
 
     steps:
     - uses: actions/checkout@v3
-    - name: Package Application
-      uses: 0h-n0/flet-action-windows@master
+    - uses: conda-incubator/setup-miniconda@v2
       with:
-        srcfile: myflet_extlib/main.py
+        auto-update-conda: true
+        python-version: "3.10"
+    - run: pip install setuptools poetry
+    - run: poetry install
+    - run: poetry add pyinstaller flet
+    - run: poetry run flet pack myflet_extlib/main.py    
+    - run: ls dist
     - uses: actions/upload-artifact@v2
       with:
-        name: myflet
+        name: myflet_extlib
         path: dist/main.exe
