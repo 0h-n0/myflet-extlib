@@ -16,7 +16,12 @@ jobs:
   build:
     strategy:
       matrix:
-        os: ["ubuntu-latest", windows-latest]
+        os: [ubuntu-latest, windows-latest]
+        include:
+          - os: windows-latest
+            exe: main.exe
+          - os: ubuntu-latest
+            exe: main
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v3
@@ -32,4 +37,4 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: myflet_extlib
-        path: dist/main.exe
+        path: dist/{{ matrix.exe }}
