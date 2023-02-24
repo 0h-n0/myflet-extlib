@@ -35,8 +35,8 @@ jobs:
     - name: Conda list
       shell: pwsh
       run: conda list        
+    - run: which python
     - run: pip install setuptools poetry
-    - run: poetry env use 3.10
     - run: poetry install
     - run: poetry add pyinstaller flet
     - run: poetry run flet pack myflet_extlib/main.py    
