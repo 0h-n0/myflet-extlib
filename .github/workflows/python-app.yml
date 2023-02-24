@@ -36,7 +36,11 @@ jobs:
       run: |
         conda install -y numpy pandas matplotlib      
     - run: which python
-    - run: conda install poetry
+    - run: pip install poetry
+    - name: 
+        run: | 
+          poetry config virtualenvs.create false
+          poetry install --no-root
     - run: poetry install
     - run: poetry add pyinstaller flet
     - run: poetry run flet pack myflet_extlib/main.py    
