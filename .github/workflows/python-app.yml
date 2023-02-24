@@ -37,7 +37,7 @@ jobs:
         conda install -y numpy pandas matplotlib      
     - run: which python
     - run: pip install poetry
-    - name: 
+    - name: install dependencies
         run: | 
           poetry config virtualenvs.create false
           poetry install --no-root
