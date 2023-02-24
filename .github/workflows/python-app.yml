@@ -34,6 +34,7 @@ jobs:
     - name: Conda list
       shell: pwsh
       run: conda list        
+    - run: conda activate test
     - run: which python    
     - run: pip install setuptools poetry
     - run: poetry env use 3.10
