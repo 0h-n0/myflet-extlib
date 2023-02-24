@@ -36,7 +36,7 @@ jobs:
       run: |
         conda install -y numpy pandas matplotlib      
     - run: which python
-    - run: pip install setuptools poetry
+    - run: conda install poetry
     - run: poetry install
     - run: poetry add pyinstaller flet
     - run: poetry run flet pack myflet_extlib/main.py    
