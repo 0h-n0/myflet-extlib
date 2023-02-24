@@ -27,6 +27,7 @@ jobs:
       with:
         auto-activate-base: true
         auto-update-conda: true
+        activate-environment: ""
         python-version: "3.10"
     - name: Conda info
       shell: bash -el {0}
@@ -34,7 +35,6 @@ jobs:
     - name: Conda list
       shell: pwsh
       run: conda list        
-    - run: conda activate test
     - run: which python    
     - run: pip install setuptools poetry
     - run: poetry env use 3.10
