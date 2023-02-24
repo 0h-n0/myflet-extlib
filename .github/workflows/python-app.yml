@@ -38,9 +38,9 @@ jobs:
     - run: which python
     - run: pip install poetry
     - name: install dependencies
-        run: | 
-          poetry config virtualenvs.create false
-          poetry install --no-root
+      run: | 
+        poetry config virtualenvs.create false
+        poetry install --no-root
     - run: poetry install
     - run: poetry add pyinstaller flet
     - run: poetry run flet pack myflet_extlib/main.py    
